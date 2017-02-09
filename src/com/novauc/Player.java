@@ -1,5 +1,7 @@
 package com.novauc;
 
+import java.util.ArrayList;
+
 /**
  * Created by psubedi2020 on 2/8/17.
  */
@@ -8,17 +10,32 @@ public class Player {
   String name;
   String weapon;
   String location;
+  ArrayList<String> items = new ArrayList<>();
+
+  public void findItem(String item) {
+      System.out.println("You found a " + item + "! Pick it up? [y/n]");
+
+      String answer = Game.nextLine();
+
+      if (answer.equalsIgnoreCase("y")) {
+          items.add(item);
+          System.out.println("You picked up an item!");
+      }
+  }
+
+
+
 
   public void chooseName() {
      System.out.println("What is your name?");
-     name = Game.scanner.nextLine();
+     name = Game.nextLine();
      System.out.println("Welcome, " + name);
   }
 
 
   public void chooseWeapon() throws Exception {
       System.out.println("Choose your weapon [sword/mace]");
-      weapon = Game.scanner.nextLine();
+      weapon = Game.nextLine();
 
       if (weapon.equalsIgnoreCase("sword")) {
           System.out.println("A sword is a fine choice!");
@@ -31,7 +48,7 @@ public class Player {
 
     public void chooseLocation() throws Exception {
         System.out.println("Choose your location [forest/tunnel]");
-        location = Game.scanner.nextLine();
+        location = Game.nextLine();
 
         if (location.equalsIgnoreCase("forest")) {
             System.out.println("Enter forest ...");
@@ -41,7 +58,6 @@ public class Player {
         else {
             throw new Exception("Invalid location.");
         }
-
 
     }
 
