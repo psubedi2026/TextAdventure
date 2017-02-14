@@ -21,6 +21,9 @@ public class Game {
         player.findItem("belt");
         player.findItem("diamonds");
 
+        Enemy ogre  = new Enemy("Ogre", 10, 10);
+        player.battle(ogre);
+
     }
 
 

@@ -5,12 +5,18 @@ import java.util.ArrayList;
 /**
  * Created by psubedi2020 on 2/8/17.
  */
-public class Player {
+public class Player extends Character {
 
-  String name;
+  //remove name to
   String weapon;
   String location;
   ArrayList<String> items = new ArrayList<>();
+
+  public Player() {
+      this.health = 20;
+      this.damage = 20;
+  }
+
 
   public void findItem(String item) {
       System.out.println("You found a " + item + "! Pick it up? [y/n]");
