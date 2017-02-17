@@ -17,12 +17,12 @@ public class Character {
             health -= enemy.damage;
             enemy.health -= damage;
 
-           System.out.printf("%s's health: %d\n", name, health);
-           System.out.printf("%s's health: %d\n", enemy.name, enemy.health);
+           System.out.printf("%s's Health: %d\n", name, health);
+           System.out.printf("%s's HEALTH: %d\n", enemy.name, enemy.health);
        }
 
 
-       String message = "%s has died.\n";
+       String message = "%s has DIED.\n";
 
        if (health <= 0)  {
            System.out.printf(message, name);
